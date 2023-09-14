@@ -1,0 +1,225 @@
+<!-- Edit screen -->
+<table width="100%">
+  <tbody>
+    <!-- First row is for the Kanbas navigation tab consisting of hyperlinks-->
+    <tr>
+      <td valign="top">
+        <ul>
+          <li>
+            <a href="../profile/account.html"> Account </a>
+          </li>
+          <li>
+            <a href="#"> Dashboard </a>
+          </li>
+          <li>
+            <a href="../home.html"> Courses </a>
+          </li>
+          <li>
+            <a href="#"> Calendar </a>
+          </li>
+          <li>
+            <a href="#"> Inbox </a>
+          </li>
+          <li>
+            <a href="#"> History </a>
+          </li>
+          <li>
+            <a href="#"> Studio </a>
+          </li>
+          <li>
+            <a href="#"> Commons </a>
+          </li>
+          <li>
+            <a href="#"> Help </a>
+          </li>
+        </ul>
+      </td>
+
+      <!-- Second column now is for Course Navigation side bar -->
+      <td valign="top">
+        <ul>
+          <li>
+            <a href="../home.html"> Home </a>
+          </li>
+          <li>
+            <a href="#"> Modules </a>
+          </li>
+          <li>
+            <a href="#"> Piazza </a>
+          </li>
+          <li>
+            <a href="#"> Zoom Meetings</a>
+          </li>
+          <li>
+            <a href="index.html"> Assignments </a>
+          </li>
+          <li>
+            <a href="#"> Quizzes </a>
+          </li>
+          <li>
+            <a href="grades.html"> Grades </a>
+          </li>
+          <li>
+            <a href="#"> People </a>
+          </li>
+          <li>
+            <a href="#"> Panopto Video </a>
+          </li>
+          <li>
+            <a href="#"> Discussions </a>
+          </li>
+          <li>
+            <a href="#"> Announcements </a>
+          </li>
+          <li>
+            <a href="#"> Pages </a>
+          </li>
+          <li>
+            <a href="#"> Files </a>
+          </li>
+          <li>
+            <a href="#"> Rubrics </a>
+          </li>
+          <li>
+            <a href="#"> Outcomes </a>
+          </li>
+          <li>
+            <a href="#"> Collaborations </a>
+          </li>
+          <li>
+            <a href="#"> Syllabus </a>
+          </li>
+          <li>
+            <a href="#"> Settings </a>
+          </li>
+        </ul>
+      </td>
+      <!-- Now column for the editor-->
+      <td valign="top">
+        <ul>
+          <select>
+            <option selected value="Speed Grader">SpeedGrader</option>
+          </select>
+          <hr />
+          <h3>Assignment Name</h3>
+          <input type="text" placeholder="A1 - ENV + HTML" />
+          <br />
+          <br />
+          <form id="textarea-editAssignment">
+            <textarea> This is the assignment description.</textarea>
+          </form>
+          <br />
+          Points
+          <br />
+          <input type="number" placeholder="100" />
+          <br />
+          <br />
+          Assignment Group
+          <br />
+          <select>
+            <option selected value="Assignments">ASSIGNMENTS</option>
+          </select>
+          <br />
+          <br />
+          Display Grade as
+          <br />
+          <select>
+            <option selected value="Percentage">Percentage</option>
+          </select>
+          <br />
+          <br />
+          Submission Type
+          <br />
+          <select>
+            <option selected value="Online">Online</option>
+          </select>
+          <br />
+          <br />
+          Online Entry Options
+          <br />
+          <input type="checkbox" value="Text Entry" name="online-entry-option" id="chkbox-text" />
+          <label for="chkbox-text">Text Entry</label>
+          <br />
+          <input
+            type="checkbox"
+            value="Website URL"
+            name="online-entry-option"
+            id="chkbox-website"
+          />
+          <label for="chkbox-website">Website URL</label>
+          <br />
+          <input
+            type="checkbox"
+            value="Media Recordings"
+            name="online-entry-option"
+            id="chkbox-media"
+          />
+          <label for="chkbox-media">Media Recordings</label>
+          <br />
+          <input
+            type="checkbox"
+            value="Student Annotation"
+            name="online-entry-option"
+            id="chkbox-annotations"
+          />
+          <label for="chkbox-annotations">Student Annotation</label>
+          <br />
+          <input type="checkbox" value="File Uploads" name="online-entry-option" id="chkbox-file" />
+          <label for="chkbox-file">File Uploads</label>
+          <br />
+          <br />
+          Submission attempts
+          <br />
+          <select>
+            <option selected value="Unlimited">Unlimited</option>
+          </select>
+          <br />
+          <br />
+          Plagiarism Review
+          <br />
+          <select>
+            <option selected value="None">None</option>
+          </select>
+          <br />
+          <br />
+          Group Assignment
+          <br />
+          <input type="checkbox" value="This is a group assignment" id="chkbox-grpAssign" />
+          <label for="chkbox-grpAssign">This is a group assignment</label>
+          <br />
+          <br />
+          Peer Reviews
+          <br />
+          <input type="checkbox" value="Require Peer Reviews" id="chkbox-peerReview" />
+          <label for="chkbox-peerReview">Require Peer Reviews</label>
+          <br />
+          <br />
+          Assign
+          <br />
+          Assign to
+          <br />
+          <input type="text" value="Everyone" placeholder="Everyone" />
+          <br />
+          <br />
+          Due
+          <br />
+          <input type="date" value="2000-01-21" />
+          <br />
+          <br />
+          Available from
+          <br />
+          <input type="date" value="2000-01-21" />
+          <br />
+          <br />
+          Until
+          <br />
+          <input type="date" value="2000-01-21" />
+          <br />
+          <br />
+          <a href="index.html"><button>Cancel</button></a>
+          <a href="index.html"><button>Save</button></a>
+        </ul>
+      </td>
+    </tr>
+  </tbody>
+</table>
