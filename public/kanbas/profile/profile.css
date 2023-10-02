@@ -1,0 +1,21 @@
+/**
+    * CSS for Profile page (not including the navbars)
+*/
+
+.ak-profile-text {
+  padding-bottom: 10px;
+}
+
+.ak-profile-text-link {
+  color: #ac1a1f;
+  text-decoration: none;
+}
+
+.ak-edit-top-label {
+    font-weight: bold;
+    padding-top: 5px;
+}
+
+.ak-edit-heading{
+    padding-top: 25px;
+}

@@ -1,0 +1,32 @@
+/* CSS overriding bootstrap for the course navigation */
+
+
+ul.ak-course-navigation .list-group-item {
+    border: none;
+    padding: 15px 10px 0px 10px;
+}
+
+.ak-second-col {
+    width: 200px;
+    margin-left: 20px;
+    padding: 0px;
+}
+
+ul.ak-course-navigation .list-group-item.active {
+    color: black;
+    background-color: white;
+    border: none;
+    border-left: 2px solid black;
+    border-radius: 0px;
+}
+
+ul.ak-course-navigation a{
+    text-decoration: none;
+    color: #ac1a1f;
+}
+
+ul.ak-course-navigation .list-group-item.active a{
+    text-decoration: none;
+    color: black;
+
+}

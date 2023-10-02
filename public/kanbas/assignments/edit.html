@@ -1,225 +1,368 @@
 <!-- Edit screen -->
-<table width="100%">
-  <tbody>
-    <!-- First row is for the Kanbas navigation tab consisting of hyperlinks-->
-    <tr>
-      <td valign="top">
-        <ul>
-          <li>
-            <a href="../profile/account.html"> Account </a>
-          </li>
-          <li>
-            <a href="#"> Dashboard </a>
-          </li>
-          <li>
-            <a href="../home.html"> Courses </a>
-          </li>
-          <li>
-            <a href="#"> Calendar </a>
-          </li>
-          <li>
-            <a href="#"> Inbox </a>
-          </li>
-          <li>
-            <a href="#"> History </a>
-          </li>
-          <li>
-            <a href="#"> Studio </a>
-          </li>
-          <li>
-            <a href="#"> Commons </a>
-          </li>
-          <li>
-            <a href="#"> Help </a>
-          </li>
-        </ul>
-      </td>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="/images/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Recreation of the Canvas Website" />
+    <link href="/vendors/bootstrap-5.1.3/css/bootstrap.min.css" rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="    https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
+    <link href="/kanbas/navBar.css" rel="stylesheet" />
+    <link href="/kanbas/courseNav.css" rel="stylesheet" />
+    <link href="assignments.css" rel="stylesheet" />
+    <title>Edit Assignment</title>
+  </head>
+  <body>
+    <!-- Nav Bar --><!-- This container is for the top of the screen-->
+    <div class="container m-0" style="width: 100%; height: 75px">
+      <div class="row align-items-start" style="height: 75px">
+        <div class="col-2 d-none d-lg-block navbar bg-black">
+          <ul class="nav flex-column">
+            <div class="nu-logo-navbar text-center" style="height: 75px">
+              <img src="/images/NU-Logo.png" alt="NU Logo Image" height="50px" width="55px" />
+            </div>
+          </ul>
+        </div>
 
-      <!-- Second column now is for Course Navigation side bar -->
-      <td valign="top">
-        <ul>
-          <li>
-            <a href="../home.html"> Home </a>
-          </li>
-          <li>
-            <a href="#"> Modules </a>
-          </li>
-          <li>
-            <a href="#"> Piazza </a>
-          </li>
-          <li>
-            <a href="#"> Zoom Meetings</a>
-          </li>
-          <li>
-            <a href="index.html"> Assignments </a>
-          </li>
-          <li>
-            <a href="#"> Quizzes </a>
-          </li>
-          <li>
-            <a href="grades.html"> Grades </a>
-          </li>
-          <li>
-            <a href="#"> People </a>
-          </li>
-          <li>
-            <a href="#"> Panopto Video </a>
-          </li>
-          <li>
-            <a href="#"> Discussions </a>
-          </li>
-          <li>
-            <a href="#"> Announcements </a>
-          </li>
-          <li>
-            <a href="#"> Pages </a>
-          </li>
-          <li>
-            <a href="#"> Files </a>
-          </li>
-          <li>
-            <a href="#"> Rubrics </a>
-          </li>
-          <li>
-            <a href="#"> Outcomes </a>
-          </li>
-          <li>
-            <a href="#"> Collaborations </a>
-          </li>
-          <li>
-            <a href="#"> Syllabus </a>
-          </li>
-          <li>
-            <a href="#"> Settings </a>
-          </li>
-        </ul>
-      </td>
-      <!-- Now column for the editor-->
-      <td valign="top">
-        <ul>
-          <select>
-            <option selected value="Speed Grader">SpeedGrader</option>
-          </select>
+        <!-- Div for the breadcrumb -->
+        <div class="col" style="padding: 20px; height: 75px">
+          <nav style="--bs-breadcrumb-divider: '>'" aria-label="breadcrumb">
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item">
+                <a href="/kanbas/home.html" style="text-decoration: none; color: #ac1a1f">
+                  <i class="fa-solid fa-bars me-4"></i>
+                  CS4550.12631.202410
+                </a>
+              </li>
+              <li class="breadcrumb-item" aria-current="page">
+                <a
+                  href="/kanbas/assignments/index.html"
+                  style="text-decoration: none; color: #ac1a1f"
+                >
+                  Assignments</a
+                >
+              </li>
+              <li class="breadcrumb-item active" aria-current="page">A1 - ENV + HTML</li>
+            </ol>
+          </nav>
           <hr />
-          <h3>Assignment Name</h3>
-          <input type="text" placeholder="A1 - ENV + HTML" />
-          <br />
-          <br />
-          <form id="textarea-editAssignment">
-            <textarea> This is the assignment description.</textarea>
-          </form>
-          <br />
-          Points
-          <br />
-          <input type="number" placeholder="100" />
-          <br />
-          <br />
-          Assignment Group
-          <br />
-          <select>
-            <option selected value="Assignments">ASSIGNMENTS</option>
-          </select>
-          <br />
-          <br />
-          Display Grade as
-          <br />
-          <select>
-            <option selected value="Percentage">Percentage</option>
-          </select>
-          <br />
-          <br />
-          Submission Type
-          <br />
-          <select>
-            <option selected value="Online">Online</option>
-          </select>
-          <br />
-          <br />
-          Online Entry Options
-          <br />
-          <input type="checkbox" value="Text Entry" name="online-entry-option" id="chkbox-text" />
-          <label for="chkbox-text">Text Entry</label>
-          <br />
-          <input
-            type="checkbox"
-            value="Website URL"
-            name="online-entry-option"
-            id="chkbox-website"
-          />
-          <label for="chkbox-website">Website URL</label>
-          <br />
-          <input
-            type="checkbox"
-            value="Media Recordings"
-            name="online-entry-option"
-            id="chkbox-media"
-          />
-          <label for="chkbox-media">Media Recordings</label>
-          <br />
-          <input
-            type="checkbox"
-            value="Student Annotation"
-            name="online-entry-option"
-            id="chkbox-annotations"
-          />
-          <label for="chkbox-annotations">Student Annotation</label>
-          <br />
-          <input type="checkbox" value="File Uploads" name="online-entry-option" id="chkbox-file" />
-          <label for="chkbox-file">File Uploads</label>
-          <br />
-          <br />
-          Submission attempts
-          <br />
-          <select>
-            <option selected value="Unlimited">Unlimited</option>
-          </select>
-          <br />
-          <br />
-          Plagiarism Review
-          <br />
-          <select>
-            <option selected value="None">None</option>
-          </select>
-          <br />
-          <br />
-          Group Assignment
-          <br />
-          <input type="checkbox" value="This is a group assignment" id="chkbox-grpAssign" />
-          <label for="chkbox-grpAssign">This is a group assignment</label>
-          <br />
-          <br />
-          Peer Reviews
-          <br />
-          <input type="checkbox" value="Require Peer Reviews" id="chkbox-peerReview" />
-          <label for="chkbox-peerReview">Require Peer Reviews</label>
-          <br />
-          <br />
-          Assign
-          <br />
-          Assign to
-          <br />
-          <input type="text" value="Everyone" placeholder="Everyone" />
-          <br />
-          <br />
-          Due
-          <br />
-          <input type="date" value="2000-01-21" />
-          <br />
-          <br />
-          Available from
-          <br />
-          <input type="date" value="2000-01-21" />
-          <br />
-          <br />
-          Until
-          <br />
-          <input type="date" value="2000-01-21" />
-          <br />
-          <br />
-          <a href="index.html"><button>Cancel</button></a>
-          <a href="index.html"><button>Save</button></a>
-        </ul>
-      </td>
-    </tr>
-  </tbody>
-</table>
+        </div>
+      </div>
+    </div>
+
+    <div class="container m-0">
+      <div class="row align-items-start">
+        <!-- This col is for the Navigation Sidebar -->
+        <div class="col-2 d-none d-lg-block navbar bg-black">
+          <ul class="nav flex-column">
+            <li class="nav-item">
+              <a class="nav-link" id="acc-icon" href="/kanbas/profile/index.html">
+                <span class="fa-stack text-center icon-span">
+                  <i
+                    class="fa-regular fa-circle fa-stack-2x fa-inverse"
+                    style="width: 100%; text-align: center"
+                  ></i>
+                  <i class="fa fa-user fa-stack-1x fa-inverse nav-icon" style="color: grey"></i>
+                </span>
+                Account
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/kanbas/dashboard/dashboard.html" id="dash-icon">
+                <span class="fa-stack icon-span">
+                  <i class="fa-solid fa-gauge-high fa-2xl nav-icon"></i>
+                </span>
+                Dashboard
+              </a>
+            </li>
+            <li class="nav-item bg-white">
+              <a class="nav-link current" href="/kanbas/home.html" id="courses-icon">
+                <span class="fa-stack icon-span">
+                  <i class="fa-solid fa-book fa-xl nav-icon"></i>
+                </span>
+                Courses
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#" id="cal-icon">
+                <span class="fa-stack icon-span">
+                  <i class="fa-solid fa-calendar-days fa-xl nav-icon"></i>
+                </span>
+                Calendar
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#" id="inbox-icon">
+                <span class="fa-stack icon-span">
+                  <i class="fa-solid fa-inbox fa-xl nav-icon"></i>
+                </span>
+                Inbox
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#" id="history-icon">
+                <span class="fa-stack icon-span">
+                  <i class="fa-regular fa-clock fa-xl nav-icon"></i>
+                </span>
+                History
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#" id="studio-icon">
+                <span class="fa-stack icon-span">
+                  <i class="fa-solid fa-tv fa-xl nav-icon"></i>
+                </span>
+                Studio
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#" id="commons-icon">
+                <span class="fa-stack text-center icon-span">
+                  <i class="fa-solid fa-c fa-stack-2x nav-icon"></i>
+                  <i class="fa-solid fa-arrow-right fa-stack-1x fa-inverse nav-icon"></i>
+                </span>
+                Commons
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#" id="help-icon">
+                <span class="fa-stack icon-span">
+                  <i class="fa-regular fa-circle-question fa-xl nav-icon"></i>
+                </span>
+                Help
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Second column now is for Course Navigation side bar -->
+        <div class="col-3 d-none d-md-block ak-second-col">
+          <span style="font-size: 10px" class="ms-3">202310_2 Fall 2022 Semest...</span>
+          <ul class="ak-course-navigation list-group">
+            <li class="list-group-item">
+              <a href="../home.html"> Home </a>
+            </li>
+            <li class="list-group-item">
+              <a href="#"> Modules </a>
+            </li>
+            <li class="list-group-item">
+              <a href="#"> Piazza </a>
+            </li>
+            <li class="list-group-item">
+              <a href="#"> Zoom Meetings</a>
+            </li>
+            <li class="list-group-item active">
+              <a href="index.html"> Assignments </a>
+            </li>
+            <li class="list-group-item">
+              <a href="#"> Quizzes </a>
+            </li>
+            <li class="list-group-item">
+              <a href="../grades.html"> Grades </a>
+            </li>
+            <li class="list-group-item">
+              <a href="#"> People </a>
+            </li>
+            <li class="list-group-item">
+              <a href="#"> Panopto Video </a>
+            </li>
+            <li class="list-group-item">
+              <a href="#"> Discussions <i class="fa-regular fa-eye-slash fa-flip-horizontal float-end" style="color:grey"></i></a>
+            </li>
+            <li class="list-group-item">
+              <a href="#"> Announcements <i class="fa-regular fa-eye-slash fa-flip-horizontal float-end" style="color:grey"></i></a>
+            </li>
+            <li class="list-group-item">
+              <a href="#"> Pages <i class="fa-regular fa-eye-slash fa-flip-horizontal float-end" style="color:grey"></i></a>
+            </li>
+            <li class="list-group-item">
+              <a href="#"> Files <i class="fa-regular fa-eye-slash fa-flip-horizontal float-end" style="color:grey"></i> </a>
+            </li>
+            <li class="list-group-item">
+              <a href="#"> Rubrics <i class="fa-regular fa-eye-slash fa-flip-horizontal float-end" style="color:grey"></i></a>
+            </li>
+            <li class="list-group-item">
+              <a href="#"> Outcomes <i class="fa-regular fa-eye-slash fa-flip-horizontal float-end" style="color:grey"></i></a>
+            </li>
+            <li class="list-group-item">
+              <a href="#"> Collaborations <i class="fa-regular fa-eye-slash fa-flip-horizontal float-end" style="color:grey"></i></a>
+            </li>
+            <li class="list-group-item">
+              <a href="#"> Syllabus <i class="fa-regular fa-eye-slash fa-flip-horizontal float-end" style="color:grey"></i> </a>
+            </li>
+            <li class="list-group-item">
+              <a href="#"> Progress Reports (EAB Navigate) </a>
+            </li>
+            <li class="list-group-item">
+              <a href="#"> Settings </a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Now column for the editor-->
+        <div class="col">
+          <ul>
+            <button class="btn ak-btn rounded float-end ms-3">
+              <i class="fa-solid fa-ellipsis-vertical"></i>
+            </button>
+            <span class="float-end" style="color: green">Published</span>
+            <span class="fa-stack ak-check float-end">
+              <i
+                class="fa-solid fa-circle fa-stack-1x"
+                style="width: 100%; color: green; text-align: center"
+              ></i>
+              <i class="fa fa-check fa-stack-1x" style="color: white"></i>
+            </span>
+            <br />
+
+            <hr style="display: block" class="mt-4" />
+
+            <h6>Assignment Name</h6>
+
+            <input class="form-control" type="text" placeholder="A1 - ENV + HTML" />
+
+            <textarea class="form-control mt-4">
+This assignment describes how to install the development environment for creating and working with Web applications we will be developing this semester. We will add new content every week, push the code to GitHub source repository, and then deploying the content to a remote server hosted on Netlify</textarea
+            >
+
+            <div class="container m-0 mt-4">
+              <div class="row align-items-start">
+                <!-- Column on the left for title of input-->
+                <div class="col-3 text-end">
+                  <span class="mb-5 ak-edit-col1">Points</span>
+                  <span class="mb-5 ak-edit-col1">Assignment Group</span>
+                  <span class="mb-5 ak-edit-col1">Display Grade as</span>
+                  <span class="mb-5 ak-edit-col1">Submission Type</span>
+                  <span class="ak-edit-col1" style="margin-top: 350px">Assign</span>
+                </div>
+
+                <!-- Column on the right for the input-->
+                <div class="col text-start">
+                  <span class="mb-5 mb-xl-4 ak-edit-col2">
+                    <input class="form-control" type="number" placeholder="100" />
+                  </span>
+
+                  <span class="mb-5 ak-edit-col2">
+                    <select class="form-select">
+                      <option selected value="Assignments">ASSIGNMENTS</option>
+                    </select>
+                  </span>
+
+                  <span class="mb-5 mb-xl-4 ak-edit-col2">
+                    <select class="form-select">
+                      <option selected value="Percentage">Percentage</option>
+                    </select>
+                  </span>
+
+                  <span class="mb-5 mb-xl-4 ak-edit-col2">
+                    <ul class="list-group ak-edit-lg">
+                      <select class="form-select w-50 m-3">
+                        <option selected value="Online">Online</option>
+                      </select>
+
+                      <li class="list-group-item ak-edit-lgi">
+                        <b>Online Entry Options</b>
+                      </li>
+                      <div class="checkbox-label-container ms-3">
+                        <input type="checkbox" checked value="Text Entry" id="chkbox-text" />
+                        <label for="chkbox-text" class="p-2">Text Entry</label>
+                      </div>
+
+                      <div class="checkbox-label-container ms-3">
+                        <input type="checkbox" checked value="Website URL" id="chkbox-website" />
+                        <label for="chkbox-website" class="p-2">Website URL</label>
+                      </div>
+
+                      <div class="checkbox-label-container ms-3">
+                        <input type="checkbox" checked value="Media Recordings" id="chkbox-media" />
+                        <label for="chkbox-media" class="p-2">Media Recordings</label>
+                      </div>
+
+                      <div class="checkbox-label-container ms-3">
+                        <input type="checkbox" value="Student Annotation" id="chkbox-annotations" />
+                        <label for="chkbox-annotations" class="p-2">Student Annotation</label>
+                      </div>
+
+                      <div class="checkbox-label-container ms-3">
+                        <input type="checkbox" value="File Uploads" id="chkbox-file" />
+                        <label for="chkbox-file" class="p-2">File Uploads</label>
+                      </div>
+
+                      <div class="checkbox-label-container ms-5">
+                        <input type="checkbox" value="File Uploads" id="chkbox-file" />
+                        <label for="chkbox-file" class="p-2">Restrict Upload File Types</label>
+                      </div>
+                    </ul>
+
+                    <ul class="list-group ak-edit-lg mt-5 mt-xl-4">
+                      <li class="list-group-item ak-edit-lgi">
+                        <div class="form-group ms-1">
+                          <div class="form-group">
+                            <label for="autocomplete-input"><b>Assign To</b></label>
+                            <input
+                              type="text"
+                              class="form-control"
+                              id="autocomplete-input"
+                              placeholder="Everyone"
+                            />
+                          </div>
+                        </div>
+                      </li>
+
+                      <label for="due-date" class="ms-4 mt-2"><b>Due</b></label>
+                      <input class="ms-4" type="date" id="due-date" value="2022-09-18" />
+
+                      <div class="container m-0 mb-4">
+                        <div class="row">
+                          <div class="col">
+                            <label for="avail-date" class="mt-3"><b>Available from</b></label>
+                            <input type="date" id="avail-date" value="2022-09-06" />
+                          </div>
+
+                          <div class="col">
+                            <label for="until-date" class="mt-3"><b>Until</b></label>
+                            <input type="date" id="until-date" />
+                          </div>
+                        </div>
+                      </div>
+                      <li class="list-group-item ak-edit-lgi ak-bg-secondary text-center">
+                        <i class="fa fa-plus fa-sm" aria-hidden="true" style="font-weight: 200"></i>
+                        Add
+                      </li>
+                    </ul>
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            <hr />
+
+            <div class="checkbox-label-container ms-3">
+              <input type="checkbox" value="Text Entry" id="chkbox-notify" />
+              <label for="chkbox-notify" class="p-2"
+                >Notify users that this content has changed</label
+              >
+              
+              <div class="float-end" style="display: inline;">
+              <button class="btn ak-btn rounded"><a href="index.html" class="ak-btn-link">Cancel</a></button>
+              <button class="btn btn-danger rounded"><a href="index.html" class="ak-btn-link text-white">Save</a></button>
+              </div>
+            </div>
+            <hr>
+
+
+
+          </ul>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

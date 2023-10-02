@@ -1,0 +1,52 @@
+.ak-btn {
+  background-color: rgb(240, 237, 237);
+  border: 1px solid rgb(217, 215, 215);
+}
+
+.ak-link {
+  color: #000;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 450;
+}
+
+/* made this because bootstraps largest ms, ms-5, is too small */
+.ak-ms-6 {
+  margin-left: 72px;
+  font-size: 12px;
+  font-weight: 350;
+  display: block;
+}
+.list-group-item{
+    border-left: 2px solid green;
+}
+
+.list-group-item-secondary{
+    border-left: none;
+}
+
+.ak-edit-col1 {
+    display: block;
+}
+
+.ak-edit-col2 {
+    display: block;
+}
+
+.ak-edit-lg{
+    border: 1px solid rgb(164, 162, 162);
+}
+
+.ak-edit-lgi{
+    border-left: none;
+    border: none;
+}
+
+.ak-bg-secondary{
+    background-color:rgb(204, 204, 204);
+}
+
+.ak-btn-link{
+    text-decoration: none;
+    color: black;
+}

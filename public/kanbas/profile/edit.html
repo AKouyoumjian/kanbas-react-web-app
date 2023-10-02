@@ -1,116 +1,247 @@
 <!-- Profile Screen-->
-<table width="100%">
-  <tbody>
-    <!-- First row is for the Kanbas navigation tab consisting of hyperlinks-->
-    <tr>
-      <td valign="top">
-        <ul>
-          <li>
-            <a href="account.html"> Account </a>
-          </li>
-          <li>
-            <a href="#"> Dashboard </a>
-          </li>
-          <li>
-            <a href="../home.html"> Courses </a>
-          </li>
-          <li>
-            <a href="#"> Calendar </a>
-          </li>
-          <li>
-            <a href="#"> Inbox </a>
-          </li>
-          <li>
-            <a href="#"> History </a>
-          </li>
-          <li>
-            <a href="#"> Studio </a>
-          </li>
-          <li>
-            <a href="#"> Commons </a>
-          </li>
-          <li>
-            <a href="#"> Help </a>
-          </li>
-        </ul>
-      </td>
-
-      <!-- Second column now is for Account Navigation side bar -->
-      <td valign="top">
-        <ul>
-          <li>
-            <a href="#"> Notifications </a>
-          </li>
-          <li>
-            <a href="index.html"> Profile </a>
-          </li>
-          <li>
-            <a href="#"> Files </a>
-          </li>
-          <li>
-            <a href="#"> Settings</a>
-          </li>
-          <li>
-            <a href="#"> ePortfolios </a>
-          </li>
-          <li>
-            <a href="#"> Shared Content </a>
-          </li>
-          <li>
-            <a href="#"> The Hub </a>
-          </li>
-          <li>
-            <a href="#"> Quickly Course Tools </a>
-          </li>
-          <li>
-            <a href="#"> Global Announcements </a>
-          </li>
-        </ul>
-      </td>
-      <!-- Third column is for editing the profile -->
-      <td>
-        <h3>Jose Annunziato</h3>
-        Name:* <input type="text" value="Jose Annunziato" />
-        Pronouns:
-        <select>
-          <option value="None">None</option>
-        </select>
-        <br />
-        Title: <input type="text" />
-        <br />
-        <h3>Contact</h3>
-        No registered services, you can add some on the <a href="#">settings</a> page.
-        <!-- There is a duplication of Contact on the example page, I am not including it-->
-        <h3>Biography</h3>
-        Faculty, Software Engineer, AI, Space, and renewables enthusiast.
-        <br />
-        <textarea rows="3" cols="50">
-Faculty, Software Engineer, AI, Space, and renewables enthusiast.
-        </textarea>
-        <h3>Links</h3>
-        <ul>
-          <li>
-            <a href="#">YouTube &#10066; Links to an external site.</a>
-          </li>
-          <h4>
-            &nbsp; &nbsp; &nbsp; &nbsp; Title &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-            &nbsp; &nbsp; URL
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="/images/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Recreation of the Canvas Website" />
+    <link href="../../vendors/bootstrap-5.1.3/css/bootstrap.min.css" rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="    https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    />
+    <link href="../navBar.css" rel="stylesheet" />
+    <link href="../courseNav.css" rel="stylesheet" />
+    <link href="profile.css" rel="stylesheet" />
+    <title>Edit Profile</title>
+  </head>
+  <body>
+    <!-- This container is for the top of the screen-->
+    <div class="container m-0" style="width: 100%; height: 75px">
+      <div class="row align-items-start" style="height: 75px">
+        <div class="col-2 d-none d-lg-block navbar bg-black">
+          <ul class="nav flex-column">
+            <div class="nu-logo-navbar text-center" style="height: 75px">
+              <img src="../../images/NU-Logo.png" alt="NU Logo Image" height="50px" width="55px" />
+            </div>
+          </ul>
+        </div>
+        <div class="col" style="padding: 20px; height: 75px">
+          <h4 style="color: #ac1a1f">
+            <i class="fa-solid fa-bars"></i>
+            &nbsp; &nbsp; &nbsp;
+            <span style="color: black; font-size: smaller"> Alex Kouyoumjian's Profile </span>
           </h4>
-          <input type="text" placeholder="YouTube" />
-          &#8594;
-          <input type="text" placeholder="https://www.youtube.com/" />
-          <a href="#">Remove</a>
+          <hr />
+        </div>
+      </div>
+    </div>
+
+    <div class="container m-0">
+      <div class="row align-items-start">
+        <!-- This col is for the Navigation Sidebar -->
+        <div class="col-2 d-none d-lg-block navbar bg-black">
+          <ul class="nav flex-column">
+            <li class="nav-item bg-white">
+              <a class="nav-link current" id="acc-icon" href="/kanbas/profile/index.html">
+                <span class="fa-stack text-center icon-span">
+                  <i
+                    class="fa-regular fa-circle fa-stack-2x"
+                    style="width: 100%; text-align: center; color: grey"
+                  ></i>
+                  <i class="fa fa-user fa-stack-1x fa-inverse nav-icon" style="color: grey"></i>
+                </span>
+                Account
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/kanbas/dashboard/dashboard.html" id="dash-icon">
+                <span class="fa-stack icon-span">
+                  <i class="fa-solid fa-gauge-high fa-2xl nav-icon"></i>
+                </span>
+                Dashboard
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/kanbas/home.html" id="courses-icon">
+                <span class="fa-stack icon-span">
+                  <i class="fa-solid fa-book fa-xl nav-icon"></i>
+                </span>
+                Courses
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#" id="cal-icon">
+                <span class="fa-stack icon-span">
+                  <i class="fa-solid fa-calendar-days fa-xl nav-icon"></i>
+                </span>
+                Calendar
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#" id="inbox-icon">
+                <span class="fa-stack icon-span">
+                  <i class="fa-solid fa-inbox fa-xl nav-icon"></i>
+                </span>
+                Inbox
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#" id="history-icon">
+                <span class="fa-stack icon-span">
+                  <i class="fa-regular fa-clock fa-xl nav-icon"></i>
+                </span>
+                History
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#" id="studio-icon">
+                <span class="fa-stack icon-span">
+                  <i class="fa-solid fa-tv fa-xl nav-icon"></i>
+                </span>
+                Studio
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#" id="commons-icon">
+                <span class="fa-stack text-center icon-span">
+                  <i class="fa-solid fa-c fa-stack-2x nav-icon"></i>
+                  <i class="fa-solid fa-arrow-right fa-stack-1x fa-inverse nav-icon"></i>
+                </span>
+                Commons
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#" id="help-icon">
+                <span class="fa-stack icon-span">
+                  <i class="fa-regular fa-circle-question fa-xl nav-icon"></i>
+                </span>
+                Help
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Second column now is for Account Navigation side bar -->
+        <div class="col-3 d-none d-md-block ak-second-col">
+          <ul class="ak-course-navigation list-group">
+            <li class="list-group-item">
+              <a href="#"> Notifications </a>
+            </li>
+            <li class="list-group-item active">
+              <a href="/kanbas/profile/index.html"> Profile </a>
+            </li>
+            <li class="list-group-item">
+              <a href="#"> Files </a>
+            </li>
+            <li class="list-group-item">
+              <a href="#"> Settings</a>
+            </li>
+            <li class="list-group-item">
+              <a href="#"> ePortfolios </a>
+            </li>
+            <li class="list-group-item">
+              <a href="#"> Shared Content </a>
+            </li>
+            <li class="list-group-item">
+              <a href="#"> The Hub </a>
+            </li>
+            <li class="list-group-item">
+              <a href="#"> Quickly Course Tools </a>
+            </li>
+            <li class="list-group-item">
+              <a href="#"> Global Announcements </a>
+            </li>
+          </ul>
+        </div>
+        <!-- Third column is for editing the profile -->
+        <div class="col" style="font-family: Arial, Helvetica, sans-serif">
+          <span class="fa-stack text-center fa-5x">
+            <i class="fa-regular fa-circle fa-stack-2x" style="color: grey"></i>
+            <i class="fa-solid fa-user fa-stack-1x fa-inverse" style="color: grey"></i>
+          </span>
+          <a href="/kanbas/profile/index.html">
+            <button
+              class="btn"
+              style="float: right; background-color: rgb(240, 237, 237); padding: 6px 14px 6px 14px"
+            >
+              <i class="fa-solid fa-pencil fa-flip-horizontal" style="margin-right: 5px"></i>Cancel
+              Editing
+            </button></a
+          >
           <br />
-          <button>Add another link</button>
-          <br />
-          <button>Cancel</button> 
-          <a href="index.html"><button>Save Profile</button></a>
-          <br />
-          <button>Edit Profile</button> 
-          <a href="index.html"><button>Cancel Editing</button></a>
-        </ul>
-      </td>
-    </tr>
-  </tbody>
-</table>
+
+          <label for="edit-name" class="ak-edit-top-label">Name:* </label>
+          <input class="form-control" type="text" value="Alex Kouyoumjian" id="edit-name" />
+          <label for="edit-pronouns" class="ak-edit-top-label">Pronouns: </label>
+          <select class="form-select" id="edit-pronouns">
+            <option value="None">None</option>
+            <option value="He/Him">He/Him</option>
+            <option value="She/Her">She/Her</option>
+            <option value="They/Them">They/Them</option>
+          </select>
+          <label for="edit-title" class="ak-edit-top-label">Title: </label>
+          <input class="form-control" type="text" id="edit-title" />
+
+          <h3 class="ak-edit-heading">Contact</h3>
+          No registered services, you can add some on the
+          <a href="#" class="ak-profile-text-link">settings</a> page.
+          <!-- There is a duplication of Contact on the example page, I am not including it-->
+          <h3 class="ak-edit-heading">Biography</h3>
+          <textarea class="form-control" rows="5">
+Computer Science student at Northeastern University.</textarea
+          >
+
+          <h3 class="ak-edit-heading">Links</h3>
+
+          <div class="container-md text-center">
+            <div class="row">
+              <div class="col">Title</div>
+              <div class="col">URL</div>
+            </div>
+
+            <div class="row">
+              <div class="col">
+                <input type="text" class="form-control" value="YouTube" />
+              </div>
+              <div class="col-1 px-0" style="width: 10px; padding-top: 7px">
+                <i class="fa-solid fa-arrow-right"></i>
+              </div>
+              <div class="col">
+                <input type="text" class="form-control" value="https://www.youtube.com/@WebDevTV" />
+              </div>
+            </div>
+            <div class="row">
+              <div class="col">
+                <input type="text" class="form-control" value="GitHub" />
+              </div>
+              <div class="col-1 px-0" style="width: 10px; padding-top: 7px">
+                <i class="fa-solid fa-arrow-right"></i>
+              </div>
+              <div class="col">
+                <input type="text" class="form-control" value="https://github.com/AKouyoumjian" />
+              </div>
+            </div>
+          </div>
+
+          <button
+            class="btn"
+            style="background-color: rgb(240, 237, 237); padding: 3px 8px 3px 8px; margin-top: 3px"
+          >
+            Add another link
+          </button>
+          <hr />
+          <a href="/kanbas/profile/index.html" class="float-end">
+            <button class="btn btn-danger">Save Profile</button></a
+          >
+          <a href="/kanbas/profile/index.html" class="float-end">
+            <button class="btn" style="background-color: rgb(240, 237, 237); margin-right: 4px">
+              Cancel
+            </button></a
+          >
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
