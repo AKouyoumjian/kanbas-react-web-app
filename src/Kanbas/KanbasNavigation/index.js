@@ -12,7 +12,7 @@ import {
   faTv,
   faC,
   faArrowRight,
-  faCircleQuestion
+  faCircleQuestion,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
@@ -111,42 +111,53 @@ function KanbasNavigation() {
   const { pathname } = useLocation();
 
   return (
-      <div className="col-1 d-none d-lg-block navbar ak-navbar bg-black" style={{ width: "85px" }}>
-        <ul className="nav flex-column">
-          {links.map((link, index) => (
-            <li
-              key={index}
-              className={`nav-item ${pathname.includes(link.text) && "bg-white"} 
+    <div className="col-1 d-none d-lg-block navbar ak-navbar bg-black" style={{ width: "85px" }}>
+      <ul className="nav flex-column">
+        <li className="mb-2">
+          {/* <img src="src/Kanbas/KanbasNavigation/NU-Logo.png" alt="NU logo image" /> */}
+
+          <img
+            src="https://i.pinimg.com/originals/08/bd/47/08bd47b365a7ad4ed868352014ecbd48.png"
+            alt="NU logo image"
+            height="90%"
+            width="90%"
+            style={{ marginLeft: "5%", marginTop: "5%" }}
+          />
+        </li>
+
+        {links.map((link, index) => (
+          <li
+            key={index}
+            className={`nav-item ${pathname.includes(link.text) && "bg-white"} 
             ${link.className || ""}`}
+          >
+            <Link
+              to={link.to}
+              className={`nav-link ${pathname.includes(link.text) && "current"}`}
+              id={link.id}
             >
-              <Link
-                to={link.to}
-                className={`nav-link ${pathname.includes(link.text) && "current"}`}
-                id={link.id}
-              >
-                <span className="fa-stack text-center icon-span">
+              <span className="fa-stack text-center icon-span">
+                <FontAwesomeIcon
+                  icon={link.icon}
+                  className={link.iconClass}
+                  style={link.iconStyle}
+                />
+
+                {link.stack && (
                   <FontAwesomeIcon
-                    icon={link.icon}
-                    className={link.iconClass}
-                    style={link.iconStyle}
+                    icon={link.stackIcon}
+                    className={link.stackClass}
+                    style={link.stackStyle}
                   />
+                )}
+              </span>
 
-                  {link.stack && (
-                    <FontAwesomeIcon
-                      icon={link.stackIcon}
-                      className={link.stackClass}
-                      style={link.stackStyle}
-                    />
-                  )}
-                </span>
-
-                {link.text}
-              </Link>
-            </li>
-          ))}
-        </ul>
-      </div>
-
+              {link.text}
+            </Link>
+          </li>
+        ))}
+      </ul>
+    </div>
   );
 }
 
