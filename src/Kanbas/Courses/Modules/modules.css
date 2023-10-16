@@ -1,0 +1,124 @@
+.ak-home-dropdown {
+  display: inline;
+  height: 38px;
+}
+
+.ak-home-dropdown .btn-secondary {
+  background-color: rgb(240, 237, 237);
+  border: none;
+  color: black;
+  font-size: 14px;
+  padding: 6px 12px;
+  height: 38px;
+}
+
+.ak-module-btn {
+  color: white;
+  background-color: red;
+  margin-right: 4px;
+}
+
+.ak-home-btn {
+  background-color: rgb(240, 237, 237);
+  margin-right: 4px;
+  border: 1px solid rgb(217, 215, 215);
+}
+
+.ak-home-status-btn {
+  background-color: rgb(240, 237, 237);
+  width: 100%;
+  margin-bottom: 5px;
+  border: 1px solid rgb(217, 215, 215);
+  border-radius: 10px;
+}
+
+.ak-home-status-btn:hover {
+  background-color: rgb(240, 237, 237);
+  width: 100%;
+  margin-bottom: 5px;
+  border: 1px solid rgb(217, 215, 215);
+  transform: scale(1.05); 
+}
+
+.ak-home-publish-btn {
+  background-color: rgb(106, 197, 106);
+  margin-right: "4px";
+  width: 90px;
+  height: 30px;
+  border: 1px solid rgb(217, 215, 215);
+  text-align: center;
+}
+
+.ak-home-unpublish-btn {
+  background-color: rgb(240, 237, 237);
+  margin-right: "4px";
+  width: 90px;
+  height: 30px;
+  text-align: center;
+
+  border: 1px solid rgb(217, 215, 215);
+}
+
+.ak-home-pub-text {
+  font-size: 15px;
+  text-align: center;
+}
+
+.ak-modules-col .list-group {
+  width: 100%;
+  font-weight: 600;
+}
+
+.ak-modules-col .list-group-item {
+  border-left: 2px solid green;
+  font-size: 0.8rem;
+}
+
+.ak-modules-ellipsis {
+  margin-left: 15px;
+  margin-right: 5px;
+}
+
+.ak-module-title {
+  border: none;
+  border-left: none;
+  margin-top: 50px;
+}
+
+.ak-check {
+  margin-right: 2px;
+  width: 15px;
+}
+
+.ak-module-link {
+  text-decoration: none;
+  color: maroon;
+}
+
+.btn-group {
+  margin-bottom: 15px;
+}
+
+.ak-status-link{
+    text-decoration: none;
+    color: maroon;
+}
+
+.ak-status-text{
+    text-decoration: none;
+    color: rgb(182, 182, 182);
+}
+
+.modulesHR {
+  margin-top: 65px;
+  margin-bottom: 10px;
+}
+
+.ak-weight-sm{
+  font-weight: 200;
+}
+
+.module-description{
+  background-color: white;
+  border-left: 1px solid green;
+}

@@ -1,0 +1,19 @@
+.ak-grd-btn{
+    background-color: rgb(235, 235, 235);
+    border: 1px solid rgb(217, 215, 215);
+    height: 40px;
+}
+
+td {
+    text-align: center;
+}
+
+.ak-out-of{
+    font-size: 13px;
+    display: inline-block;
+}
+
+.ak-grades-span{
+    color: #ac1a1f;
+    font-weight: 400;
+}

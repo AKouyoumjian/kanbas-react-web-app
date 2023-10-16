@@ -1,0 +1,43 @@
+ul.ak-course-navigation .list-group-item {
+    border: none;
+    padding: 15px 10px 0px 10px;
+}
+
+.ak-second-col {
+    width: 200px;
+    margin-left: 20px;
+    padding: 0px;
+}
+
+ul.ak-course-navigation .list-group-item.active {
+    color: black;
+    background-color: white;
+    border: none;
+    border-left: 2px solid black;
+    border-radius: 0px;
+}
+
+ul.ak-course-navigation a{
+    text-decoration: none;
+    color: #ac1a1f;
+}
+
+ul.ak-course-navigation .list-group-item.active a{
+    text-decoration: none;
+    color: black;
+
+}
+
+/* Default to leave room for course nav when it is displayed (on md and larger screens) */
+.ak-modules-div {
+  left: 320px;
+  top: 50px;
+}
+
+/* once screen gets to sm (md is 768px so anything less), make the div start at left of screen */
+@media (max-width: 767px) {
+  .ak-modules-div {
+    left: 30px;
+    top: 50px;
+  }
+}

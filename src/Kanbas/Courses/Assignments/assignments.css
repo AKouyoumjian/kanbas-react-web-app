@@ -1,0 +1,131 @@
+.ak-btn {
+  background-color: rgb(240, 237, 237);
+  border: 1px solid rgb(217, 215, 215);
+}
+
+.ak-link {
+  color: #000;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 450;
+}
+
+/* made this because bootstraps largest ms, ms-5, is too small */
+.ak-ms-6 {
+  margin-left: 72px;
+  font-size: 12px;
+  font-weight: 350;
+  display: block;
+}
+.list-group-item{
+    border-left: 2px solid green;
+}
+
+.list-group-item-secondary{
+    border-left: none;
+}
+
+.ak-edit-col1 {
+    display: block;
+}
+
+.ak-edit-col2 {
+    display: block;
+}
+
+.ak-edit-lg{
+    border: 1px solid rgb(164, 162, 162);
+}
+
+.ak-edit-lgi{
+    border-left: none;
+    border: none;
+}
+
+.ak-bg-secondary{
+    background-color:rgb(204, 204, 204);
+}
+
+.ak-btn-link{
+    text-decoration: none;
+    color: black;
+}
+
+.ak-home-dropdown {
+  display: inline;
+  height: 38px;
+}
+
+.ak-home-dropdown .btn-secondary {
+  background-color: rgb(240, 237, 237);
+  border: none;
+  color: black;
+  font-size: 14px;
+  padding: 6px 12px;
+  height: 38px;
+}
+
+.ak-module-btn {
+  color: white;
+  background-color: #cf3036;
+  margin-right: 4px;
+}
+
+.ak-home-btn {
+  background-color: rgb(240, 237, 237);
+  margin-right: 4px;
+  border: 1px solid rgb(217, 215, 215);
+}
+
+.ak-home-status-btn {
+  background-color: rgb(240, 237, 237);
+  width: 100%;
+  margin-bottom: 5px;
+  border: 1px solid rgb(217, 215, 215);
+  border-radius: 10px;
+}
+
+.ak-home-status-btn:hover {
+  background-color: rgb(240, 237, 237);
+  width: 100%;
+  margin-bottom: 5px;
+  border: 1px solid rgb(217, 215, 215);
+  transform: scale(1.05); 
+}
+
+.ak-home-publish-btn {
+  background-color: rgb(106, 197, 106);
+  margin-right: "4px";
+  width: 90px;
+  height: 30px;
+  border: 1px solid rgb(217, 215, 215);
+  text-align: center;
+}
+
+.ak-home-unpublish-btn {
+  background-color: rgb(240, 237, 237);
+  margin-right: "4px";
+  width: 90px;
+  height: 30px;
+  text-align: center;
+
+  border: 1px solid rgb(217, 215, 215);
+}
+
+.ak-home-pub-text {
+  font-size: 15px;
+  text-align: center;
+}
+
+.assignmentHR {
+  margin-top: 65px;
+  margin-bottom: 20px;
+}
+
+.ak-weight-sm{
+  font-weight: 200;
+}
+
+.ak-bold{
+  font-weight: 450;
+}

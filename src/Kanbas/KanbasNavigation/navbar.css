@@ -1,0 +1,59 @@
+/* Custom CSS for Navigation Bar */
+.ak-navbar {
+  width: 85px;
+  height: 100%;
+  padding: 0px;
+  margin: 0px;
+}
+
+.flex-column {
+  margin: 0px;
+  padding: 0px;
+  height: 100%;
+  width: 100%;
+}
+
+label.icon-label {
+  width: 100%;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.icon-span {
+  width: 100%;
+  margin-top: 5px;
+
+}
+
+nav-icon {
+  width: 100%;
+  text-align: center;
+  color: #ac1a1f;
+}
+
+.nu-logo-navbar {
+  padding: 5px;
+  margin: 5px;
+}
+
+.navbar .nav-link {
+  font-size: 12px;
+  text-align: center;
+  color: white;
+  padding: 0px;
+
+}
+
+.nav-item {
+  height: 70px;
+  padding: 5px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.nav-item a.current {
+  background-color: white;
+  color: #ac1a1f;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}

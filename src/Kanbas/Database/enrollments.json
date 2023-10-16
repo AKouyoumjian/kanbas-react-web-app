@@ -1,0 +1,31 @@
+[
+  { "_id": "1", "user": "121", "course": "CS4550" },
+  { "_id": "2", "user": "122", "course": "CS4550" },
+  { "_id": "3", "user": "123", "course": "CS4550" },
+  { "_id": "4", "user": "124", "course": "CS4550" },
+  { "_id": "5", "user": "125", "course": "CS4550" },
+  { "_id": "6", "user": "126", "course": "CS4550" },
+
+  { "_id": "7", "user": "121", "course": "CS1800" },
+  { "_id": "8", "user": "122", "course": "CS1800" },
+  { "_id": "9", "user": "123", "course": "CS1800" },
+  { "_id": "10", "user": "124", "course": "CS1800" },
+  { "_id": "11", "user": "125", "course": "CS1800" },
+  { "_id": "12", "user": "126", "course": "CS1800" },
+
+  { "_id": "13", "user": "121", "course": "CS2810" },
+  { "_id": "14", "user": "122", "course": "CS2810" },
+  { "_id": "15", "user": "123", "course": "CS2810" },
+  { "_id": "16", "user": "124", "course": "CS2810" },
+  { "_id": "17", "user": "125", "course": "CS2810" },
+  { "_id": "18", "user": "126", "course": "CS2810" },
+
+  { "_id": "19", "user": "121", "course": "CS3500" },
+  { "_id": "20", "user": "122", "course": "CS3500" },
+  { "_id": "21", "user": "123", "course": "CS3500" },
+  { "_id": "22", "user": "124", "course": "CS3500" },
+  { "_id": "23", "user": "125", "course": "CS3500" },
+  { "_id": "24", "user": "126", "course": "CS3500" }
+
+  
+]
