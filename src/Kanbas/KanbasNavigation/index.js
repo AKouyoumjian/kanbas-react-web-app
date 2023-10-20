@@ -114,7 +114,7 @@ function KanbasNavigation() {
     <div className="col-1 d-none d-lg-block navbar ak-navbar bg-black" style={{ width: "85px" }}>
       <ul className="nav flex-column">
         <li className="mb-2">
-          {/* <img src="src/Kanbas/KanbasNavigation/NU-Logo.png" alt="NU logo image" /> */}
+          {/* <img src="src/Kanbas/KanbasNavigation/NU-Logo.png" alt="NU logo" /> */}
 
           <img
             src="https://i.pinimg.com/originals/08/bd/47/08bd47b365a7ad4ed868352014ecbd48.png"

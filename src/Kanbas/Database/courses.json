@@ -1,19 +1,43 @@
 [
-  { "_id": "CS4550",
-    "name": "Web Development", "number": "12631", "startDate": "2023-09-01",
-    "endDate": "2023-12-15", "color": "darkblue", "numberLong": "111222"
+  {
+    "_id": "CS4550",
+    "abbreviation": "CS4550",
+    "name": "Web Development",
+    "number": "12631",
+    "startDate": "2023-09-01",
+    "endDate": "2023-12-15",
+    "color": "darkblue",
+    "numberLong": "111222"
   },
-  { "_id": "CS1800",
-    "name": "Discrete Structures", "number": "19304", "startDate": "2023-09-01", "endDate": "2023-12-15",
-     "color": "pink", "numberLong": "188844"
+  {
+    "_id": "CS1800",
+    "abbreviation": "CS1800",
+    "name": "Discrete Structures",
+    "number": "19304",
+    "startDate": "2023-09-01",
+    "endDate": "2023-12-15",
+    "color": "pink",
+    "numberLong": "188844"
   },
-  { "_id": "CS2810",
-    "name": "Mathematics of Data ...", "number": "22040", "startDate": "2023-09-01", "endDate": "2023-12-15", 
-    "color": "green", "numberLong": "230230"
+  {
+    "_id": "CS2810",
+    "abbreviation": "CS2810",
+    "name": "Mathematics of Data ...",
+    "number": "22040",
+    "startDate": "2023-09-01",
+    "endDate": "2023-12-15",
+    "color": "green",
+    "numberLong": "230230"
   },
-  { "_id": "CS3500",
-    "name": "Object Oriented Design", "number": "11210", "startDate": "2023-09-01", "endDate": "2023-12-15", 
-    "color": "lightblue", "numberLong": "440884"
+  {
+    "_id": "CS3500",
+    "abbreviation": "CS3500",
+    "name": "Object Oriented Design",
+    "number": "11210",
+    "startDate": "2023-09-01",
+    "endDate": "2023-12-15",
+    "color": "lightblue",
+    "numberLong": "440884"
   }
 ]
 

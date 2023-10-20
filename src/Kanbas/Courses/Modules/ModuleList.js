@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useParams } from "react-router-dom";
 import db from "../../Database";
 import "./modules.css";
@@ -10,13 +10,44 @@ import {
   faSortDown,
   faPlus,
 } from "@fortawesome/free-solid-svg-icons";
+import { useSelector, useDispatch } from "react-redux";
+import { addModule, deleteModule, updateModule, setModule } from "./modulesReducer";
 
 function ModuleList() {
   const { courseId } = useParams();
-  const modules = db.modules;
+  const modules = useSelector((state) => state.modulesReducer.modules);
+  const module = useSelector((state) => state.modulesReducer.module);
+  const dispatch = useDispatch();
 
   return (
-    <ul className="list-group" style={{ display: "block" }}>
+    <ul className="list-group mt-5 me-1" style={{ display: "block" }}>
+      <li className="list-group-item border-info border-2 rounded">
+        <input
+          className="form-control"
+          value={module.name}
+          onChange={(e) => dispatch(setModule({ ...module, name: e.target.value }))}
+        />
+        <textarea
+          className="form-control"
+          value={module.description}
+          onChange={(e) => dispatch(setModule({ ...module, description: e.target.value }))}
+        />
+        <div class="text-center mt-2">
+          <button
+            onClick={() => dispatch(addModule({ ...module, course: courseId }))}
+            className="btn btn-success text-center me-2"
+          >
+            Add Module
+          </button>
+          <button
+            onClick={() => dispatch(updateModule(module))}
+            className="btn btn-info text-center"
+          >
+            Update Module
+          </button>
+        </div>
+      </li>
+
       {modules
         .filter((module) => module.course === courseId)
         .map((module, index) => [
@@ -29,7 +60,20 @@ function ModuleList() {
               <FontAwesomeIcon icon={faEllipsisVertical} className="fa-xs" />
               <FontAwesomeIcon icon={faSortDown} className="fa-2xs ms-2 me-2 ak-weight-sm" />
               {module.name}
-              <span className="float-end fa-2xs">
+              <button
+                className="btn btn-sucess ms-3 me-2"
+                style={{ color: "white", backgroundColor: "green" }}
+                onClick={() => dispatch(setModule(module))}
+              >
+                Edit
+              </button>
+              <button
+                className="btn btn-danger me-5"
+                onClick={() => dispatch(deleteModule(module._id))}
+              >
+                Delete
+              </button>
+              <span className="float-end fa-2xs" style={{ display: "inline" }}>
                 <span className="fa-stack fa-2xs mb-2">
                   <FontAwesomeIcon
                     icon={faCircle}
@@ -43,10 +87,7 @@ function ModuleList() {
                   />
                 </span>
 
-                <FontAwesomeIcon
-                  icon={faSortDown}
-                  className="fa-2xs ms-1 me-4 mb-2 ak-weight-sm"
-                />
+                <FontAwesomeIcon icon={faSortDown} className="fa-2xs ms-1 me-4 mb-2 ak-weight-sm" />
                 <FontAwesomeIcon icon={faPlus} className="fa-2xs me-4 ak-weight-sm" />
                 <FontAwesomeIcon
                   icon={faEllipsisVertical}
@@ -55,8 +96,11 @@ function ModuleList() {
               </span>
             </h3>
           </li>,
-          <li key={`nested-${index}`} className="list-group-item module-description"
-          style={{ borderLeft: "1px solid green"}}>
+          <li
+            key={`nested-${index}`}
+            className="list-group-item module-description"
+            style={{ borderLeft: "1px solid green" }}
+          >
             <FontAwesomeIcon icon={faEllipsisVertical} className="fa-sm" />
             <FontAwesomeIcon icon={faEllipsisVertical} className="fa-sm me-5" />
             {module.description}
