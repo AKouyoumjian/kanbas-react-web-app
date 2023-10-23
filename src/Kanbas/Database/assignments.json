@@ -4,83 +4,119 @@
     "title": "Propulsion Assignment",
     "course": "CS4550",
     "description": "This assignment covers propulsion principles and applications.",
-    "duePts": "Sep 18, 2023 at 11:59pm | 100 pts"
+    "points": "100",
+    "dueDate": "2023-09-18",
+    "availableFromDate": "2023-09-11",
+    "availableUntilDate": "2023-09-18"
   },
   {
     "_id": "A102",
     "title": "Combustion Analysis",
     "course": "CS4550",
     "description": "Analyze combustion processes and their impact on aerospace systems.",
-    "duePts": "Sep 25, 2023 at 11:59pm | 100 pts"
+    "points": "100",
+    "dueDate": "2023-09-25",
+    "availableFromDate": "2023-09-18",
+    "availableUntilDate": "2023-09-25"
   },
   {
     "_id": "A103",
     "title": "Nozzle Design Project",
     "course": "CS4550",
     "description": "Design an efficient nozzle for propulsion systems.",
-    "duePts": "Oct 2, 2023 at 11:59pm | 100 pts"
+    "points": "100",
+    "dueDate": "2023-10-02",
+    "availableFromDate": "2023-09-25",
+    "availableUntilDate": "2023-10-02"
   },
   {
     "_id": "A201",
     "title": "Aerodynamics Quiz",
     "course": "CS1800",
     "description": "Quiz on aerodynamics concepts and principles.",
-    "duePts": "Sep 18, 2023 at 11:59pm | 100 pts"
+    "points": "100",
+    "dueDate": "2023-09-18",
+    "availableFromDate": "2023-09-11",
+    "availableUntilDate": "2023-09-18"
   },
   {
     "_id": "A202",
     "title": "Flow Analysis",
     "course": "CS1800",
     "description": "Analyze the flow characteristics of fluids in aerospace systems.",
-    "duePts": "Sep 25, 2023 at 11:59pm | 100 pts"
+    "points": "100",
+    "dueDate": "2023-09-25",
+    "availableFromDate": "2023-09-18",
+    "availableUntilDate": "2023-09-25"
   },
   {
     "_id": "A203",
     "title": "Heating Analysis",
     "course": "CS1800",
     "description": "Analyze heating effects on aerospace materials and structures.",
-    "duePts": "Oct 2, 2023 at 11:59pm | 100 pts"
+    "points": "100",
+    "dueDate": "2023-10-02",
+    "availableFromDate": "2023-09-25",
+    "availableUntilDate": "2023-10-02"
   },
   {
     "_id": "A301",
     "title": "Structural Design Task",
     "course": "CS2810",
     "description": "Design a structure capable of withstanding specific conditions.",
-    "duePts": "Sep 18, 2023 at 11:59pm | 100 pts"
+    "points": "100",
+    "dueDate": "2023-09-18",
+    "availableFromDate": "2023-09-11",
+    "availableUntilDate": "2023-09-18"
   },
   {
     "_id": "A302",
     "title": "Orbital Calculations",
     "course": "CS2810",
     "description": "Perform orbital calculations for spacecraft trajectories.",
-    "duePts": "Sep 25, 2023 at 11:59pm | 100 pts"
+    "points": "100",
+    "dueDate": "2023-09-25",
+    "availableFromDate": "2023-09-18",
+    "availableUntilDate": "2023-09-25"
   },
   {
     "_id": "A303",
     "title": "Systems Engineering Exam",
     "course": "CS2810",
     "description": "Exam covering various aspects of systems engineering in aerospace.",
-    "duePts": "Oct 2, 2023 at 11:59pm | 100 pts"
+    "points": "100",
+    "dueDate": "2023-10-02",
+    "availableFromDate": "2023-09-25",
+    "availableUntilDate": "2023-10-02"
   },
   {
     "_id": "A401",
     "title": "OOD A1",
     "course": "CS3500",
     "description": "Object-oriented design assignment covering key principles.",
-    "duePts": "Sep 18, 2023 at 11:59pm | 100 pts"
+    "points": "100",
+    "dueDate": "2023-09-18",
+    "availableFromDate": "2023-09-11",
+    "availableUntilDate": "2023-09-18"
   },
   {
     "_id": "A402",
     "title": "OOD A2",
     "course": "CS3500",
     "description": "Implement object-oriented concepts in a software project.",
-    "duePts": "Sep 25, 2023 at 11:59pm | 100 pts"
+    "points": "100",
+    "dueDate": "2023-09-25",
+    "availableFromDate": "2023-09-18",
+    "availableUntilDate": "2023-09-25"
   },
   {
     "_id": "A403",
     "title": "OOD A3",
     "course": "CS3500",
     "description": "Advanced object-oriented design and programming assignment.",
-    "duePts": "Oct 2, 2023 at 11:59pm | 100 pts"
+    "points": "100",
+    "dueDate": "2023-10-02",
+    "availableFromDate": "2023-09-25",
+    "availableUntilDate": "2023-10-02"
   }
 ]

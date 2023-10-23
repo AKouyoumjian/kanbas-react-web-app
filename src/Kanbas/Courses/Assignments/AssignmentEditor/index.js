@@ -1,19 +1,35 @@
 import React from "react";
 import { useNavigate, useParams, Link } from "react-router-dom";
-import db from "../../../Database";
 import "../assignments.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCheck, faCircle, faEllipsisVertical, faPlus } from "@fortawesome/free-solid-svg-icons";
+import { useSelector, useDispatch } from "react-redux";
+import { addAssignment, updateAssignment, selectAssignment } from ".././assignmentsReducer";
+
 
 function AssignmentEditor() {
   const { assignmentId } = useParams();
-  const assignment = db.assignments.find((assignment) => assignment._id === assignmentId);
+  const assignments = useSelector((state) => state.assignmentsReducer.assignments);
+  const assignment = useSelector((state) => state.assignmentsReducer.assignment);
+  const dispatch = useDispatch();
   const { courseId } = useParams();
   const navigate = useNavigate();
   const handleSave = () => {
-    console.log("Actually saving assignment TBD in later assignments");
+    if (assignmentId === "new") {
+      const newAssignment = {
+        ...assignment,
+        _id: new Date().getTime().toString(),
+      };
+      dispatch(addAssignment(newAssignment));
+
+    } else {
+      dispatch(updateAssignment(assignment));
+    }
     navigate(`/Kanbas/Courses/${courseId}/Assignments`);
   };
+  const aFrom = assignment.availableFromDate;
+  const aUntil = assignment.availableUntilDate;
+
   return (
     <div style={{ paddingTop: "40px", width: "100%" }}>
       <span className="float-end">
@@ -23,41 +39,54 @@ function AssignmentEditor() {
         </span>
         <span style={{ color: "green" }}>Published</span>
         <button
-          className="btn mx-2 pe-0"
+          className="btn ak-home-btn mx-2"
           style={{
             backgroundColor: "rgb(240, 237, 237)",
+            marginRight: "4px",
             border: "1px solid rgb(217, 215, 215)",
-           
           }}
         >
-          <FontAwesomeIcon icon={faEllipsisVertical} className="me-3 fa-lg" />
+          <FontAwesomeIcon icon={faEllipsisVertical} />{" "}
         </button>
       </span>
       <hr className="assignmentHR" />
       <span className="ak-bold">Assignment Name</span>
-      <input value={assignment.title} className="form-control mb-3 mt-1" />
+      <input
+        value={assignment.title}
+        className="form-control mb-3 mt-1"
+        onChange={(e) => dispatch(selectAssignment({ ...assignment, title: e.target.value }))}
+      />
       <span className="ak-bold">Assignment Description</span>
-      <input value={assignment.description} className="form-control mb-2 mt-1" />
+      <input
+        value={assignment.description}
+        className="form-control mb-2 mt-1"
+        onChange={(e) => dispatch(selectAssignment({ ...assignment, description: e.target.value }))}
+      />
 
       <div className="row mt-4">
         {/* Column for labels */}
         <div className="col-3 text-end">
           <span className="mb-5 ak-edit-col1">Points</span>
-          <span className="mb-5 ak-edit-col1">Assignment Group</span>
-          <span className="mb-5 ak-edit-col1">Display Grade as</span>
-          <span className="mb-5 ak-edit-col1">Submission Type</span>
-          <span className="ak-edit-col1" style={{ marginTop: "350px" }}>
-            Assign
-          </span>
+          {/* <span className="mb-5 ak-edit-col1">Assignment Group</span>
+          <span className="mb-5 ak-edit-col1">Display Grade as</span> */}
+          {/* <span className="mb-5 ak-edit-col1">Submission Type</span> */}
+          <span className="ak-edit-col1 mt-4">Assign</span>
         </div>
 
         {/* Column on the right for the input */}
-        <div className="col text-start">
+        <div className="col text-start me-3">
           <span className="mb-5 mb-xl-4 ak-edit-col2">
-            <input className="form-control" type="number" placeholder="100" />
+            <input
+              className="form-control"
+              type="number"
+              value={assignment.points}
+              onChange={(e) =>
+                dispatch(selectAssignment({ ...assignment, points: e.target.value }))
+              }
+            />
           </span>
 
-          <span className="mb-5 ak-edit-col2">
+          {/* <span className="mb-5 ak-edit-col2">
             <select className="form-select">
               <option selected value="Assignments">
                 ASSIGNMENTS
@@ -71,9 +100,9 @@ function AssignmentEditor() {
                 Percentage
               </option>
             </select>
-          </span>
+          </span> */}
 
-          <span className="mb-5 mb-xl-4 ak-edit-col2">
+          {/* <span className="mb-5 mb-xl-4 ak-edit-col2">
             <ul className="list-group ak-edit-lg">
               <select className="form-select w-50 m-3">
                 <option selected value="Online">
@@ -126,7 +155,7 @@ function AssignmentEditor() {
                 </label>
               </div>
             </ul>
-          </span>
+          </span> */}
 
           <ul className="list-group ak-edit-lg mt-5 mt-xl-4">
             <li className="list-group-item ak-edit-lgi">
@@ -148,22 +177,49 @@ function AssignmentEditor() {
             <label htmlFor="due-date" className="ms-4 mt-2">
               <b>Due</b>
             </label>
-            <input className="ms-4" type="date" id="due-date" value="2022-09-18" />
+            <input
+              onChange={(e) =>
+                dispatch(selectAssignment({ ...assignment, dueDate: e.target.value }))
+              }
+              className="ms-4"
+              type="date"
+              id="due-date"
+              value={assignment.availableUntilDate}
+            />
 
             <div className="container m-0 mb-4">
               <div className="row">
                 <div className="col">
-                  <label htmlFor="avail-date" className="mt-3">
+                  <label htmlFor="avail-date" className="mt-3 me-2">
                     <b>Available from</b>
                   </label>
-                  <input type="date" id="avail-date" value="2022-09-06" />
+
+                  <input
+                    onChange={(e) =>
+                      dispatch(
+                        selectAssignment({ ...assignment, availableFromDate: e.target.value })
+                      )
+                    }
+                    type="date"
+                    id="avail-date"
+                    value={aFrom}
+                  />
                 </div>
 
                 <div className="col">
-                  <label htmlFor="until-date" className="mt-3">
+                  <label htmlFor="until-date" className="mt-3 me-2">
                     <b>Until</b>
                   </label>
-                  <input type="date" id="until-date" />
+                  <input
+                    onChange={(e) =>
+                      dispatch(
+                        selectAssignment({ ...assignment, availableUntilDate: e.target.value })
+                      )
+                    }
+                    type="date"
+                    id="until-date"
+                    value={aUntil}
+                  />
                 </div>
               </div>
             </div>
@@ -181,8 +237,8 @@ function AssignmentEditor() {
       </div>
 
       <hr className="mt-4" />
-      <div className="float-end">
-        <Link to={`/Kanbas/Courses/${courseId}/Assignments`} className="btn btn-danger me-1">
+      <div className="float-end me-3">
+        <Link to={`/Kanbas/Courses/${courseId}/Assignments`} className="btn btn-danger me-2">
           Cancel
         </Link>
         <button onClick={handleSave} className="btn btn-success me-2">

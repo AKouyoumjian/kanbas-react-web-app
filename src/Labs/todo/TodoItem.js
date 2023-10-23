@@ -1,16 +1,16 @@
-const TodoItem = ({
-  todo = {
-    done: true,
-    title: "Buy milk",
-    status: "COMPLETED",
-  },
-}) => {
+import { deleteTodo, setTodo } from "./todosReducer";
+import React from "react";
+import { useDispatch } from "react-redux";
+
+function TodoItem({ todo }) {
+  const dispatch = useDispatch();
   return (
-    <li className="list-group-item">
-      <input type="checkbox" defaultChecked={todo.done} />
-      &nbsp;
-      {todo.title}({todo.status})
+    <li key={todo.id} className="list-group-item">
+      <button onClick={() => dispatch(deleteTodo(todo.id))}>Delete </button>
+      <button onClick={() => dispatch(setTodo(todo))}>Edit </button>
+      {todo.title}
     </li>
   );
-};
+}
+
 export default TodoItem;
