@@ -2,7 +2,14 @@ import React from "react";
 import { Link, useParams } from "react-router-dom";
 import "./assignments.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
+import { findAssignmentsForCourse, deleteAssignment } from "./client";
+import {
+  setAssignments,
+  deleteAssignment as deleteAssignmentAction,
+  selectAssignment,
+} from "./assignmentsReducer";
 import {
   faCheck,
   faCircle,
@@ -11,7 +18,6 @@ import {
   faPlus,
   faSortDown,
 } from "@fortawesome/free-solid-svg-icons";
-import { deleteAssignment, selectAssignment } from "./assignmentsReducer";
 
 function Assignments() {
   const { courseId } = useParams();
@@ -28,6 +34,24 @@ function Assignments() {
   };
 
   const dispatch = useDispatch();
+
+  /*
+    useEffect(() => {
+    findModulesForCourse(courseId).then((modules) => dispatch(setModules(modules)));
+  }, [courseId]);
+  */
+
+  useEffect(() => {
+    findAssignmentsForCourse(courseId).then((assignments) => {
+      dispatch(setAssignments(assignments));
+    });
+  }, [courseId]);
+
+  const handleDeleteAssignment = (assignmentId) => {
+    deleteAssignment(assignmentId).then((status) => {
+      dispatch(deleteAssignmentAction(assignmentId));
+    });
+  };
 
   return (
     <div>
@@ -103,7 +127,8 @@ function Assignments() {
             </span>
           </div>
 
-          { // added this for if there are no assignments
+          {
+            // added this for if there are no assignments
             courseAssignments.length === 0 ? (
               <div className="list-group-item">
                 <span className="text-muted">No Assignments</span>
@@ -127,6 +152,8 @@ function Assignments() {
               <div className="ak-ms-6">
                 {assignment.description}
                 <span className="float-end">
+                  <button className="btn btn-success mb-3 me-5">Edit Assignment</button>
+
                   <button
                     className="btn btn-danger mb-3 me-5"
                     onClick={(e) => {
@@ -137,7 +164,7 @@ function Assignments() {
                       );
                       // window will pop up to confirm if you want to delete
                       if (confirmDelete) {
-                        dispatch(deleteAssignment(assignment._id));
+                        handleDeleteAssignment(assignment._id);
                       }
                     }}
                   >

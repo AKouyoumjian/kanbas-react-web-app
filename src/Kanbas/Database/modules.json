@@ -1,7 +1,7 @@
 [
   {
     "_id": "M101",
-    "name": "Introduction to Rocket Propulsion",
+    "name": "Intro to Rocket Propulsion",
     "description": "Basic principles of rocket propulsion and rocket engines.",
     "course": "CS3500"
   },
@@ -25,7 +25,7 @@
   },
   {
     "_id": "M202",
-    "name": "Subsonic and Supersonic Flow",
+    "name": "Subsonic/Supersonic Flow",
     "description": "Understanding subsonic and supersonic aerodynamic behaviors.",
     "course": "CS1800"
   },
@@ -67,7 +67,7 @@
   },
   {
     "_id": "M403",
-    "name": "Introduction to JS and ReactJS",
+    "name": "Intro to JS and ReactJS",
     "description": "Introduces JavaScript and ReactJs.",
     "course": "CS4550"
   }

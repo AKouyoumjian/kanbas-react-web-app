@@ -4,8 +4,13 @@ import "../assignments.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCheck, faCircle, faEllipsisVertical, faPlus } from "@fortawesome/free-solid-svg-icons";
 import { useSelector, useDispatch } from "react-redux";
-import { addAssignment, updateAssignment, selectAssignment } from ".././assignmentsReducer";
+import {
+  addAssignment,
+  updateAssignment as updateAssignmentAction,
+  selectAssignment,
+} from ".././assignmentsReducer";
 
+import { createAssignment, updateAssignment } from "../client";
 
 function AssignmentEditor() {
   const { assignmentId } = useParams();
@@ -14,18 +19,39 @@ function AssignmentEditor() {
   const dispatch = useDispatch();
   const { courseId } = useParams();
   const navigate = useNavigate();
-  const handleSave = () => {
-    if (assignmentId === "new") {
-      const newAssignment = {
-        ...assignment,
-        _id: new Date().getTime().toString(),
-      };
-      dispatch(addAssignment(newAssignment));
+  const newAssignmentTemplate = {
+    title: "New Assignment Title",
+    course: courseId,
+    description: "New Description",
+    points: "100",
+    dueDate: "2023-09-18",
+    availableFromDate: "2023-09-11",
+    availableUntilDate: "2023-09-18",
+  };
 
-    } else {
-      dispatch(updateAssignment(assignment));
-    }
-    navigate(`/Kanbas/Courses/${courseId}/Assignments`);
+  const handleAddAssignment = (assignment) => {
+    createAssignment(courseId, assignment).then((assignment) => {
+      dispatch(addAssignment(assignment));
+    });
+  };
+
+  const handleUpdateAssignment = async (assignment) => {
+    const updatedAssignment = await updateAssignment(assignment);
+    dispatch(updateAssignmentAction(updatedAssignment));
+  };
+
+  const handleSave = () => {
+      if (assignmentId === "new") {
+        const newAssignment = {
+          ...assignment,
+          _id: new Date().getTime().toString(),
+        };
+        handleAddAssignment(newAssignment);
+      } else {
+        handleUpdateAssignment(assignment);
+      }
+      navigate(`/Kanbas/Courses/${courseId}/Assignments`);
+
   };
   const aFrom = assignment.availableFromDate;
   const aUntil = assignment.availableUntilDate;

@@ -1,16 +1,47 @@
 import { Link, useLocation, useParams } from "react-router-dom";
-import db from "../../Kanbas/Database";
+import { useState, useEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faGlasses } from "@fortawesome/free-solid-svg-icons";
+import * as service from "../service";
 
 function Breadcrumb() {
   const { pathname } = useLocation();
   const { courseId } = useParams();
-  const course = db.courses.find((course) => course._id === courseId);
   const path = pathname.split("/");
   const pathEnding = path.pop().replace(/%20/g, " ");
   const pathSecondLast = path.pop().replace(/%20/g, " ");
 
+  const [course, setCourse] = useState(undefined);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const fetchedCourse = await service.fetchCourseById(courseId);
+        setCourse(fetchedCourse);
+      } catch (error) {
+        // Handle errors if any during fetch
+        console.error("Error fetching course:", error);
+        // Setting a default course in case of error
+        setCourse({
+          _id: courseId,
+          abbreviation: "CS4550",
+          name: "Web Development",
+          number: "12631",
+          startDate: "2023-09-01",
+          endDate: "2023-12-15",
+          color: "darkblue",
+          numberLong: "111222",
+        });
+      }
+    };
+
+    fetchData();
+  }, [courseId]);
+
+  // Display a loading indicator while fetching course
+  if (!course) {
+    return <div>Loading...</div>;
+  }
   return (
     <div className="col">
       <div className="col" style={{ padding: "20px", height: "75px" }}>

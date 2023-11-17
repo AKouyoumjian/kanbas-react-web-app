@@ -1,7 +1,6 @@
 import { faFileLines } from "@fortawesome/free-solid-svg-icons";
 import { React, useState } from "react";
 import { Link } from "react-router-dom";
-import db from "../Database";
 import "./dashboard.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import cardImageDarkBlue from "../../Kanbas/Dashboard/Dash-Images/card-image-dkblue.png";
@@ -102,11 +101,19 @@ function Dashboard({ courses, course, setCourse, addNewCourse, deleteCourse, upd
             </div>
           </div>
         </div>
-
-        <button className="btn btn-success m-3" onClick={addNewCourse}>
+        <button
+          className="btn btn-success m-3"
+          onClick={addNewCourse}
+        >
           Add Couse
         </button>
-        <button className="btn btn-info me-2 " onClick={updateCourse}>
+        <button
+          className="btn btn-info me-2 "
+          onClick={(event) => {
+            event.preventDefault();
+            updateCourse(course);
+          }}
+        >
           Update
         </button>
       </div>
@@ -151,7 +158,7 @@ function Dashboard({ courses, course, setCourse, addNewCourse, deleteCourse, upd
                           className="btn btn-danger "
                           onClick={(event) => {
                             event.preventDefault();
-                            deleteCourse(course._id);
+                            deleteCourse(course);
                           }}
                         >
                           Delete
