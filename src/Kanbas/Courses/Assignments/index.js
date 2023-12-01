@@ -35,12 +35,6 @@ function Assignments() {
 
   const dispatch = useDispatch();
 
-  /*
-    useEffect(() => {
-    findModulesForCourse(courseId).then((modules) => dispatch(setModules(modules)));
-  }, [courseId]);
-  */
-
   useEffect(() => {
     findAssignmentsForCourse(courseId).then((assignments) => {
       dispatch(setAssignments(assignments));

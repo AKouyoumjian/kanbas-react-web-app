@@ -1,0 +1,12 @@
+.instructions-box {
+  background-color: #f0f0f0;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.instructions-box ul {
+  list-style-type: square;
+  padding-left: 20px;
+  margin-top: 0;
+}
