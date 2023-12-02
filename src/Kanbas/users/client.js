@@ -3,7 +3,7 @@ const request = axios.create({
   withCredentials: true,
 });
 
-// either local host url or the environment variable's url.
+// either local host url or the environment variable's url
 export const BASE_API = process.env.REACT_APP_API_BASE;
 export const USERS_API = `${BASE_API}/users`;
 export const signin = async (credentials) => {
