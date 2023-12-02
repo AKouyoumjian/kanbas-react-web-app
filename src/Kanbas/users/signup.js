@@ -23,7 +23,7 @@ function Signup() {
   }, []);
 
   const signup = async () => {
-    // check if username already exists, if so show error message and return
+    // check if username already exists, if so show error message and return.
     const existingUser = users.find((existing) => existing.username === credentials.username);
     if (existingUser) {
       setShowError(true);
