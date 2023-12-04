@@ -146,6 +146,9 @@ function UserTable() {
           <li>
             Click on any <span style={{ color: "blue" }}>username</span> to view their profile page.
           </li>
+          <li>
+            This page would be unavailable from non-admin users, but is visible for the purposes of this project.
+          </li>
         </ul>
       </div>
 
