@@ -6,6 +6,13 @@ function Signin() {
   const [showError, setShowError] = useState(false);
   const navigate = useNavigate();
   const signin = async () => {
+    if (!credentials.username || !credentials.password) {
+      setShowError(true);
+      setTimeout(() => {
+        setShowError(false);
+      }, 5000);
+      return;
+    }
     try {
       await client.signin(credentials);
       navigate("/kanbas/Account");

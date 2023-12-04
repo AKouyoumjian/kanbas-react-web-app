@@ -23,6 +23,13 @@ function Signup() {
   }, []);
 
   const signup = async () => {
+    if (!credentials.username || !credentials.password) {
+      setShowError(true);
+      setTimeout(() => {
+        setShowError(false);
+      }, 5000);
+      return;
+    }
     // check if username already exists, if so show error message and return.
     const existingUser = users.find((existing) => existing.username === credentials.username);
     if (existingUser) {
@@ -56,22 +63,20 @@ function Signup() {
           padding: "20px",
           border: "1px solid #ccc",
           borderRadius: "5px",
-          width: "70%"
+          width: "70%",
         }}
       >
-        <h3
-        style={{color: "red"}}>IMPORTANT</h3>
+        <h3 style={{ color: "red" }}>IMPORTANT</h3>
         <p>
-          Sign up is coded to navigate to the account screen, automatically signing in the user. This works
-          every time you sign-up, except for the first one when the server is loaded. If you sign up again with a
-          new user, it will navigate automatically to the account screen and have you signed in.
+          Sign up is coded to navigate to the account screen, automatically signing in the user.
+          This works every time you sign-up, except for the first one when the server is loaded. If
+          you sign up again with a new user, it will navigate automatically to the account screen
+          and have you signed in.
         </p>
         <p>
           For the first time, you can also press on the Kanbas Navigation "Account" Tab and sign in.
         </p>
-        <p>
-          I believe this is an issue with NodeJS, not with my code.
-        </p>
+        <p>I believe this is an issue with NodeJS, not with my code.</p>
       </div>
 
       <h1>Signup</h1>
