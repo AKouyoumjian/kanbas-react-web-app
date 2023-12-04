@@ -176,15 +176,26 @@ function Account() {
             )}
             {id && (
               <button disabled="true" className="form-control btn btn-primary" onClick={save}>
-                Cannot Update Account beacause this user is not logged in
+                Update Account Disabled. This is not the logged in account.
               </button>
             )}
             <Link to="/kanbas/users" className="form-control btn btn-warning mt-2">
               View All Users
             </Link>
-            <button className="form-control btn btn-danger mt-2" onClick={signout}>
-              Signout of Logged In Account
-            </button>
+            {!id && (
+              <button className="form-control btn btn-danger mt-2" onClick={signout}>
+                Signout
+              </button>
+            )}
+            {id && (
+              <button
+                disabled="true"
+                className="form-control btn btn-danger mt-2"
+                onClick={signout}
+              >
+                Sign Out Disabled. This is not the logged in account.
+              </button>
+            )}
           </div>
         </div>
       )}

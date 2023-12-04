@@ -115,14 +115,15 @@ function KanbasNavigation() {
       <ul className="nav flex-column">
         <li className="mb-2">
           {/* <img src="src/Kanbas/KanbasNavigation/NU-Logo.png" alt="NU logo" /> */}
-
-          <img
-            src="https://i.pinimg.com/originals/08/bd/47/08bd47b365a7ad4ed868352014ecbd48.png"
-            alt="NU logo image"
-            height="90%"
-            width="90%"
-            style={{ marginLeft: "5%", marginTop: "5%" }}
-          />
+          <Link to="/Kanbas/Dashboard">
+            <img
+              src="https://i.pinimg.com/originals/08/bd/47/08bd47b365a7ad4ed868352014ecbd48.png"
+              alt="NU logo image"
+              height="90%"
+              width="90%"
+              style={{ marginLeft: "5%", marginTop: "5%" }}
+            />
+          </Link>
         </li>
 
         {links.map((link, index) => (
