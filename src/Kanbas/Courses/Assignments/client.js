@@ -13,7 +13,6 @@ export const deleteAssignment = async (assignmentId) => {
 };
 
 export const findAssignmentsForCourse = async (courseId) => {
-  // error with this get request
   const response = await axios.get(`${COURSES_URL}/${courseId}/assignments`);
   console.log("here");
   return response.data;

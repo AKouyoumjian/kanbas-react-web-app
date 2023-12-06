@@ -23,7 +23,18 @@ function Signup() {
   }, []);
 
   const signup = async () => {
-    if (!credentials.username || !credentials.password) {
+    // if no username is inputted
+    if (!credentials.username) {
+      setError("Please enter a username.");
+      setShowError(true);
+      setTimeout(() => {
+        setShowError(false);
+      }, 5000);
+      return;
+    }
+    // if no password is inputted
+    if (!credentials.password) {
+      setError("Please enter a password.");
       setShowError(true);
       setTimeout(() => {
         setShowError(false);
@@ -33,6 +44,7 @@ function Signup() {
     // check if username already exists, if so show error message and return.
     const existingUser = users.find((existing) => existing.username === credentials.username);
     if (existingUser) {
+      setError("Username already exists. Please choose another.");
       setShowError(true);
       setTimeout(() => {
         setShowError(false);
